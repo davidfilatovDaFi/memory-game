@@ -1,21 +1,22 @@
 <template>
   <div 
-  @click="() => isActive = !isActive" 
+  @click="() => {
+    this.$emit('active',Math.random())
+    !card.isMatched ? card.isSelected = !card.isSelected : card.isSelected = card.isSelected
+    console.log(card.isSelected)
+  }" 
   class="card" 
-  :class="{flip: isActive}">
-    <img class="card_front" src="../assets/card_front.jpg" alt="card">
+  :class="{flip: card.isSelected}">
+    <img class="card_front" :src="card.img" alt="card">
     <img class="card_back" src="../assets/card.jpg" alt="card">
   </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      isActive: false
-    }
+  props: {
+    card: {type: Object}
   }
 }
-
 </script>
 <style lang="scss">
   .card {
