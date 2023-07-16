@@ -29,6 +29,18 @@ export default {
     position: relative;
     transform-style: preserve-3d;
     transition: 1s;
+    @media (max-width:680px) {
+      width: 100px;
+      height: 150px;
+    }
+    @media (max-width:510px) {
+      width: 80px;
+      height: 120px;
+    }
+    @media (max-width:370px) {
+      width: 55px;
+      height: 80px;
+    }
   }
   .card_front, .card_back {
     position: absolute;
@@ -37,6 +49,9 @@ export default {
     border-radius: 15px;
     backface-visibility: hidden;
     transition: 1s;
+    @media (max-width:680px) {
+      border-radius: 8px;
+    }
   }
   .card_front {
     transform: rotateY(180deg);

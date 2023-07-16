@@ -92,8 +92,19 @@ export default {
     justify-content: center;
   }
   .game {
-    width: 650px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 670px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 0 10px;
+    @media (max-width:680px) {
+      width: 500px;
+    }
+    @media (max-width:510px) {
+      width: 380px;
+    }
+    @media (max-width:370px) {
+      width: 270px;
+    }
   }
 </style>
