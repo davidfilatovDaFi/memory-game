@@ -2,11 +2,14 @@
   <div 
   @click="() => {
     this.$emit('active',Math.random())
-    !card.isMatched ? card.isSelected = !card.isSelected : card.isSelected = card.isSelected
-    console.log(card.isSelected)
+    card.isMatched 
+      || 
+      card.isBlocked 
+      || 
+      card.isSelected ? card.isSelected = card.isSelected : card.isSelected = !card.isSelected
   }" 
   class="card" 
-  :class="{flip: card.isSelected}">
+  :class="{flip: card.isSelected || card.isMatched}">
     <img class="card_front" :src="card.img" alt="card">
     <img class="card_back" src="../assets/card.jpg" alt="card">
   </div>
